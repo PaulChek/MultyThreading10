@@ -21,10 +21,11 @@ var result = await Task.WhenAll(tasks);
 var j = 1;
 
 foreach (var user in result) {
+    int len =  user.Email.Length  + 8;
     Console.ForegroundColor = (res = rand()) == 0 ? ConsoleColor.Red : res == 1 ? ConsoleColor.Green : ConsoleColor.Yellow;
-    Console.WriteLine(new string('.', 15) + (j++) + new string('.', 15));
+    Console.WriteLine(new string('.', len/2) + (j++) + new string('.', len/2));
     Console.WriteLine(user);
-    Console.WriteLine(new string('.', 31) + '\n');
+    Console.WriteLine(new string('.', len) + '\n');
     Console.ResetColor();
 }
 
